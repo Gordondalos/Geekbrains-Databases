@@ -1,0 +1,66 @@
+tkvitko@MacBook-TKvitko ~ % cat .my.cnf
+[mysql]
+user=root
+password=*
+[client]
+user=root
+password=*
+
+tkvitko@MacBook-TKvitko ~ % mysql
+mysql> create database example;
+Query OK, 1 row affected (0,17 sec)
+
+mysql> \u example
+Database changed
+
+mysql> create table users (id INT, name varchar(255));
+Query OK, 0 rows affected (0,26 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_example |
++-------------------+
+| users             |
++-------------------+
+1 row in set (0,00 sec)
+
+mysql> describe users;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int          | YES  |     | NULL    |       |
+| name  | varchar(255) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+2 rows in set (0,03 sec)
+
+mysql> \q
+Bye
+
+tkvitko@MacBook-TKvitko ~ % mysqldump example > example.sql
+tkvitko@MacBook-TKvitko ~ % mysql
+mysql> create database sample;
+Query OK, 1 row affected (0,01 sec)
+mysql> \q
+Bye
+tkvitko@MacBook-TKvitko ~ % mysql sample < example.sql
+tkvitko@MacBook-TKvitko ~ % mysql
+mysql> \u sample
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++------------------+
+| Tables_in_sample |
++------------------+
+| users            |
++------------------+
+1 row in set (0,01 sec)
+mysql> describe users;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int          | YES  |     | NULL    |       |
+| name  | varchar(255) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+2 rows in set (0,01 sec)
