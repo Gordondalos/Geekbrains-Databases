@@ -111,10 +111,9 @@ CREATE TABLE likes(
     -- PRIMARY KEY (user_id, media_id) – можно было и так вместо id в качестве PK
   	-- слишком увлекаться индексами тоже опасно, рациональнее их добавлять по мере необходимости (напр., провисают по времени какие-то запросы)  
 
-/* намеренно забыли, чтобы позднее увидеть их отсутствие в ER-диаграмме
     , FOREIGN KEY (user_id) REFERENCES users(id)
     , FOREIGN KEY (media_id) REFERENCES media(id)
-*/
+
 );
 
 DROP TABLE IF EXISTS `photo_albums`;
@@ -174,3 +173,9 @@ CREATE TABLE user_friends_grouped(
 	FOREIGN KEY (friend_id) REFERENCES users(id),
 	FOREIGN KEY (group_id) REFERENCES user_groups(id)
 );
+
+/*
+В рамках домашнего задания к уроку 4 
+*/
+
+ALTER TABLE profiles ADD COLUMN is_active BOOL DEFAULT TRUE
