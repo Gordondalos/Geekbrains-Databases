@@ -16,3 +16,21 @@ CREATE TABLE storehouses_products (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) COMMENT = 'Запасы на складе';
+
+INSERT INTO storehouses_products (storehouse_id, product_id, value) VALUES
+(1, 1, 0),
+(1, 2, 2500),
+(1, 3, 0),
+(1, 4, 30),
+(1, 5, 500),
+(1, 6, 1);
+
+# Выполнение
+
+ALTER TABLE storehouses_products ADD COLUMN is_exist BOOL DEFAULT 0;
+
+UPDATE storehouses_products
+set is_exist = 1
+where value != 0;
+
+SELECT * FROM storehouses_products ORDER BY is_exist DESC, value
