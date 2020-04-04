@@ -44,14 +44,14 @@ CREATE TABLE users (
 INSERT INTO `users` VALUES 
 ('1','me@test.ru','2003-02-20 18:15:18','Chloe','Kihn','m','2012-11-21'),
 ('2','he@test.ru','2005-07-24 19:06:25','Santino','Wisoky','m','1974-03-27'),
-('3','she@test.ru','2011-04-15 01:35:17','Linnea','Botsford','w','1973-01-22'),
-('4','they@test.ru','1988-09-28 03:12:18','Diamond','Mraz','w','2002-07-20'),
+('3','she@test.ru','2011-04-15 01:35:17','Linnea','Botsford','f','1973-01-22'),
+('4','they@test.ru','1988-09-28 03:12:18','Diamond','Mraz','f','2002-07-20'),
 ('5','it@test.ru','1987-02-25 12:45:18','Janae','Cole','m','1999-11-20'),
 ('6','man@test.ru','1996-04-23 00:53:30','Retta','Carroll','m','1992-01-07'),
-('7','woman@test.ru','2001-02-07 23:37:56','Armand','Ward','w','2009-03-24'),
+('7','woman@test.ru','2001-02-07 23:37:56','Armand','Ward','f','2009-03-24'),
 ('8','animal@test.ru','2007-08-15 11:01:39','Madyson','Baumbach','m','2002-07-16'),
-('9','bird@test.ru','2018-03-08 01:58:00','Daphnee','Boehm','w','2005-05-20'),
-('10','cat@test.ru','2020-02-11 03:07:49','Alysa','Schimmel','w','1979-03-16'); 
+('9','bird@test.ru','2018-03-08 01:58:00','Daphnee','Boehm','f','2005-05-20'),
+('10','cat@test.ru','2020-02-11 03:07:49','Alysa','Schimmel','f','1979-03-16'); 
 
 /*
  * Типы контента

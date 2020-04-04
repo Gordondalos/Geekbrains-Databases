@@ -11,10 +11,10 @@ iii. Написать скрипт, отмечающий несовершенн�
 Предварительно добавить такое поле в таблицу profiles со значением по умолчанию = true (или 1)
 **/
 
-ALTER TABLE profiles ADD COLUMN is_active BOOL DEFAULT TRUE
+ALTER TABLE profiles ADD COLUMN is_active BIT DEFAULT 1
 
 UPDATE profiles
-set is_active = FALSE
+set is_active = 0
 WHERE birthday < '2002-03-30'
 
 /**
